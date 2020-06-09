@@ -1,6 +1,7 @@
 import 'package:flutter/services.dart';
 import 'package:flutter/material.dart';
 import 'package:bot_toast/bot_toast.dart';
+import 'package:flutter_ios_android_module/appoint.dart';
 import 'package:flutter_ios_android_module/method.dart';
 
 void main() => runApp(MyApp());
@@ -12,11 +13,12 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: "Flutter 测试",
       theme: ThemeData(
-        primarySwatch: Colors.orange
+          primarySwatch: Colors.orange
       ),
       builder: BotToastInit(),
+      debugShowCheckedModeBanner: false,
       navigatorObservers: [BotToastNavigatorObserver()],
-      home: MethodListPage(title: "标题",),
+      home: AppointPage(),
     );
   }
 }

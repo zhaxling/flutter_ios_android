@@ -13,6 +13,10 @@ class RootViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let fourVC = MeViewController()
+        fourVC.title = "我的"
+        self.addChild(BaseNavigationController(rootViewController: fourVC))
+        
         let firstVC = HomeViewController()
         firstVC.title = "首页"
         self.addChild(BaseNavigationController(rootViewController: firstVC))
@@ -27,10 +31,6 @@ class RootViewController: UITabBarController {
         thirdVC.title = "活动"
         self.addChild(BaseNavigationController(rootViewController: thirdVC))
         
-        
-        let fourVC = BaseViewController()
-        fourVC.title = "我的"
-        self.addChild(BaseNavigationController(rootViewController: fourVC))
     }
     
     

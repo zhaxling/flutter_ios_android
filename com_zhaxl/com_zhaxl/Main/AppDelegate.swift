@@ -12,8 +12,10 @@ import FlutterPluginRegistrant
 
 @UIApplicationMain
 class AppDelegate: FlutterAppDelegate {
+//class AppDelegate: UIResponder, UIApplicationDelegate {
     
     lazy var flutterEngine = FlutterEngine(name: "com.ios.flutter.engine")
+//    var window: UIWindow?
     
     override func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         

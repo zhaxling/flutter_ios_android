@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 import SwiftyJSON
 import SwifterSwift
 
@@ -39,6 +40,27 @@ class HomeViewController: BaseViewController {
         }
         
         stackView.height = CGFloat(stackView.arrangedSubviews.count) * 25.0
+        
+        
+        let titles = ["记账","记账","记账"]
+        
+        var butttonY = 350
+        var tag = 10
+        
+        
+        for str in titles {
+            let btn = UIButton(frame: CGRect(x: 10, y: butttonY, width: Int(UIScreen.main.bounds.size.width) - 20, height: 38))
+            btn.setTitle(str, for: .normal)
+            btn.backgroundColor = UIColor.orange
+            btn.tag = tag
+            btn.addTarget(self, action: #selector(tapClick), for: .touchUpInside)
+            view.addSubview(btn)
+            butttonY = butttonY + 38 + 10
+            tag = tag + 10
+        }
+    }
+    
+    @objc func tapClick(btn :UIButton) {
         
     }
     

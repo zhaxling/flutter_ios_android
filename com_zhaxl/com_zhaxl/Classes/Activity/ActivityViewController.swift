@@ -16,6 +16,7 @@ class ActivityViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
 
         let titles = ["Flutter 测试1","Flutter 测试2","Flutter 测试3"]
         
@@ -43,21 +44,38 @@ class ActivityViewController: BaseViewController {
 
             let flutterEngine = (UIApplication.shared.delegate as! AppDelegate).flutterEngine
             let flutterViewController = FlutterViewController(engine: flutterEngine, nibName: nil, bundle: nil)
-            self.navigationController?.pushViewController(flutterViewController)
+            flutterViewController.modalPresentationStyle = .fullScreen
+            flutterViewController.title = "记账"
+            self.navigationController?.present(flutterViewController, animated: true, completion: nil)
+            //            self.navigationController?.pushViewController(flutterViewController)
+            
+            let channel = FlutterMethodChannel(name: "com.pages/native_ios", binaryMessenger: flutterViewController as! FlutterBinaryMessenger)
+            channel.setMethodCallHandler { (call, result) in
+                print("method = ", call.method, "arguments = ", call.arguments ?? "argumentsNULL", result)
+
+                // 方法
+                let method = call.method
+
+                if method == "flutterPop" {
+                    flutterViewController.dismiss(animated: true, completion: nil)
+//                    self.navigationController?.popViewController()
+                }
+
+            }
         }
         
         if btn.tag == 20 {
             let flutterViewController = FlutterViewController(project: nil, nibName: nil, bundle: nil)
-            
+
             flutterViewController.setInitialRoute("MyApp")
-            
+
             let channel = FlutterMethodChannel(name: "com.flutter.channel.ios", binaryMessenger: flutterViewController as! FlutterBinaryMessenger)
             channel.setMethodCallHandler { (call, result) in
                 print("method = ", call.method, "arguments = ", call.arguments ?? "argumentsNULL", result)
-                
+
                 // 方法
                 let method = call.method
-                
+
                 if method == "pop" {
                     self.navigationController?.popViewController()
                 }
@@ -71,7 +89,7 @@ class ActivityViewController: BaseViewController {
                     let dic = ["a":"传给Flutter参数"]
                     result(dic)
                 }
-                
+
             }
             self.navigationController?.pushViewController(flutterViewController, animated: true)
         }

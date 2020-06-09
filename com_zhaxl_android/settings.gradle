@@ -1,0 +1,10 @@
+rootProject.name='com_zhaxl_android'
+include ':app'
+setBinding(new Binding([gradle: this]))
+evaluate(new File(
+  settingsDir,
+  '../flutter_ios_android_module/.android/include_flutter.groovy'
+))
+
+include ':flutter_ios_android_module'
+project(':flutter_ios_android_module').projectDir = new File('../flutter_ios_android_module')
