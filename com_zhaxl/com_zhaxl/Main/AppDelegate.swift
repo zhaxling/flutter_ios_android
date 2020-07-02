@@ -22,7 +22,10 @@ class AppDelegate: FlutterAppDelegate {
         
         window = UIWindow(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
         window?.backgroundColor = UIColor.white
-        window?.rootViewController = RootViewController()
+        // 根目录
+//        window?.rootViewController = RootViewController()
+        // Flutter
+        window?.rootViewController = BaseNavigationController(rootViewController: ActivityViewController())
         window?.makeKeyAndVisible()
         
         flutterRun()

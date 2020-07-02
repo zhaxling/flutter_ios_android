@@ -1,6 +1,8 @@
 # Uncomment the next line to define a global platform for your project
 platform :ios, '10.0'
 
+source 'https://github.com/CocoaPods/Specs.git'
+
 flutter_application_path = '../flutter_ios_android_module'
 load File.join(flutter_application_path, '.ios', 'Flutter', 'podhelper.rb')
 
@@ -12,6 +14,10 @@ target 'com_zhaxl' do
   pod 'SnapKit'
   pod 'Kingfisher'
   pod 'SwifterSwift'
+  # pod 'Nama', '6.7.0' #注意此版本目前为dev版
+  # web socket
+  pod 'Starscream', '~> 4.0.0'
+  pod 'AXWebViewController'
 #  pod 'DOAlertController'
   
   # flutter

@@ -17,10 +17,13 @@ class ActivityViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
-        let titles = ["Flutter 测试1","Flutter 测试2","Flutter 测试3"]
+        self.title = "不吃牛的草"
         
-        var Y = 150
+
+//        let titles = ["Flutter 测试1","Flutter 测试2","Flutter 测试3"]
+        let titles = ["不吃牛的草"]
+        
+        var Y = Int(UIScreen.main.bounds.size.height - 200)
         var tag = 10
         
         
@@ -45,7 +48,7 @@ class ActivityViewController: BaseViewController {
             let flutterEngine = (UIApplication.shared.delegate as! AppDelegate).flutterEngine
             let flutterViewController = FlutterViewController(engine: flutterEngine, nibName: nil, bundle: nil)
             flutterViewController.modalPresentationStyle = .fullScreen
-            flutterViewController.title = "记账"
+            flutterViewController.title = ""
             self.navigationController?.present(flutterViewController, animated: true, completion: nil)
             //            self.navigationController?.pushViewController(flutterViewController)
             
@@ -58,7 +61,6 @@ class ActivityViewController: BaseViewController {
 
                 if method == "flutterPop" {
                     flutterViewController.dismiss(animated: true, completion: nil)
-//                    self.navigationController?.popViewController()
                 }
 
             }

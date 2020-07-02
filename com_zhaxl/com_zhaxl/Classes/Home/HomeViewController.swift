@@ -22,7 +22,7 @@ class HomeViewController: BaseViewController {
         stackView.alignment = .fill
         stackView.spacing = 5.0
         stackView.distribution = .equalCentering
-        view.addSubview(stackView)
+//        view.addSubview(stackView)
         
         let arr = ["1","2","3","4","5"]
         var Y = 0
@@ -61,8 +61,32 @@ class HomeViewController: BaseViewController {
     }
     
     @objc func tapClick(btn :UIButton) {
-        
+        node()
     }
     
     
+}
+
+extension HomeViewController {
+    // 测试node服务
+    
+    
+    func node() {
+        
+        AF.request("http://localhost:3000/reg", method: .post, parameters: ["phone":"18301019509"]).responseJSON { (data) in
+            
+            let msg = String("\(data)")
+            
+            
+            let alert = UIAlertController(title: msg, message: "", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "确定", style: .cancel, handler: { (action) in
+                
+            }))
+            
+            self.present(alert, animated: true) {
+                
+            }
+        }
+    }
 }

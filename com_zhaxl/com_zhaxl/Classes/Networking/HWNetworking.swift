@@ -194,10 +194,10 @@ extension HWNetworking {
     /// - note: more see: `self.request(...)`
     @discardableResult
     public func POST(url: String, parameters: [String: String]? = nil, datas: [HWMultipartData]? = nil, headers: [String: String]? = nil) -> HWNetworkRequest {
-        guard datas != nil else {
+        guard let data = datas else {
             return POST(url: url, parameters: parameters)
         }
-        return upload(url: url, parameters: parameters, datas: datas!, headers: headers)
+        return upload(url: url, parameters: parameters, datas: data, headers: headers)
     }
     
     /// Creates a GET request

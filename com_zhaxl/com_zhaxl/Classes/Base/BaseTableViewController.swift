@@ -10,6 +10,10 @@ import UIKit
 
 class BaseTableViewController: BaseViewController {
     
+    // 数据源
+    var dataSource = [Any]()
+    
+    // 数组
     lazy var tableView: UITableView = {
         let tableView = UITableView(frame: self.view.bounds, style: .grouped)
         tableView.backgroundColor = UIColor.white

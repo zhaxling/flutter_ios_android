@@ -1,5 +1,15 @@
 PODS:
   - Alamofire (5.1.0)
+  - Aspects (1.4.1)
+  - AXIndicatorView (0.1.1)
+  - AXNavigationBackItemInjection (0.0.2)
+  - AXPracticalHUD (2.1.4):
+    - AXIndicatorView
+  - AXWebViewController (0.7.2):
+    - Aspects
+    - AXNavigationBackItemInjection
+    - AXPracticalHUD
+    - NJKWebViewProgress
   - Flutter (1.0.0)
   - flutter_ios_android_module (0.0.1):
     - Flutter
@@ -8,7 +18,13 @@ PODS:
   - Kingfisher (5.14.0):
     - Kingfisher/Core (= 5.14.0)
   - Kingfisher/Core (5.14.0)
+  - NJKWebViewProgress (0.2.3):
+    - NJKWebViewProgress/Core (= 0.2.3)
+    - NJKWebViewProgress/ProgressView (= 0.2.3)
+  - NJKWebViewProgress/Core (0.2.3)
+  - NJKWebViewProgress/ProgressView (0.2.3)
   - SnapKit (5.0.1)
+  - Starscream (4.0.3)
   - SwifterSwift (5.2.0):
     - SwifterSwift/AppKit (= 5.2.0)
     - SwifterSwift/CoreAnimation (= 5.2.0)
@@ -37,14 +53,24 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 5.1.0)
+  - AXWebViewController
   - Flutter (from `../flutter_ios_android_module/.ios/Flutter/engine`)
   - flutter_ios_android_module (from `../flutter_ios_android_module/.ios/Flutter`)
   - FlutterPluginRegistrant (from `../flutter_ios_android_module/.ios/Flutter/FlutterPluginRegistrant`)
   - Kingfisher
   - SnapKit
+  - Starscream (~> 4.0.0)
   - SwifterSwift
 
 SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Aspects
+    - AXIndicatorView
+    - AXNavigationBackItemInjection
+    - AXPracticalHUD
+    - AXWebViewController
+    - NJKWebViewProgress
+    - Starscream
   trunk:
     - Alamofire
     - Kingfisher
@@ -61,13 +87,20 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Alamofire: 9d5c5f602928e512395b30950c5984eca840093c
+  Aspects: 7595ba96a6727a58ebcbfc954497fc5d2fdde546
+  AXIndicatorView: 566b490a2dd9781d4ffbcc9752be9b9cdc6e728e
+  AXNavigationBackItemInjection: efe0446967f3cbcc85a9118decd1e145138912dd
+  AXPracticalHUD: 821d170b31e050c426ef8754b07b4264a8b1d861
+  AXWebViewController: 96566c473fce2806f4da696132b31777f5404c9f
   Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
   flutter_ios_android_module: d0a142a9721889fa480a57058be2a11a7555db25
   FlutterPluginRegistrant: d59dd07dd90e9c6430996073575a5bd1ea19677e
   Kingfisher: 7b64389a43139c903ec434788344c288217c792d
+  NJKWebViewProgress: f481fd424cb5ecc27eacae11b5397db92fba9a4d
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+  Starscream: ef06f0961fff0880bca0604416d61141e4faca67
   SwifterSwift: 334181863c416882d97b7a60c05054d9e4d799e2
 
-PODFILE CHECKSUM: f05991fd3adf01fb1b2fc747b7394fbb0e989b7b
+PODFILE CHECKSUM: 6eeff7cfb1d14e149d65ecd82e5b6189fc324892
 
 COCOAPODS: 1.9.1
